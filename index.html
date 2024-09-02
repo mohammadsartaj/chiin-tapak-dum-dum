@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 40px 0;
+            padding: 0;
+            background-color: antiquewhite;
+
+        }
+
+        .message {
+            color: rgb(241, 4, 4);
+            margin: auto;
+            padding: 10px;
+            text-align: center;
+        }
+
+        video {
+            border-radius: 20px;
+        }
+
+        #After {
+            display: none;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: aqua;
+            border: 1px solid black;
+            border-radius: 25px;
+        }
+
+        .sub {
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 40px;
+            margin: 20px auto;
+            width: 150px;
+            background-color: blue;
+            color: aliceblue;
+            /* font: bold; */
+            font-weight: bold;
+            font-size: 18px
+        }
+
+        .Reset {
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 40px;
+            margin: 20px auto;
+            width: 150px;
+            background-color: rgb(9, 226, 118);
+            color: aliceblue;
+            /* font: bold; */
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <h1>Hello All!</h1>
+        <h3>Press the below button</h3>
+        <button type="submit" onclick="Message()" class="sub">Click Me</button>
+        <div id="After">
+            <h1 id="message" class="message"></h1>
+            <video id="myVideo">
+                <source src="/cd1a3078.mp4" type="video/mp4">
+            </video>
+        </div>
+        <button type="button" class="Reset" onclick="resetone()">Reset</button>
+    </div>
+
+
+    <script>
+        function Message() {
+            const after = document.getElementById('After');
+            after.style.display = 'block';
+            const msg = document.getElementById('message');
+            msg.innerHTML = 'Chin Tapak Dum Dum!!!';
+            const video = document.getElementById('myVideo');
+            video.muted = false;
+            video.currentTime = 0;
+            video.play();
+        }
+        function resetone() {
+            const after = document.getElementById('After');
+            after.style.display = 'none';
+            // after.style.display = 'none';
+        }
+        // document.getElementById('Reset').addEventListener('click', resetContent);
+    </script>
+</body>
+
+</html>
